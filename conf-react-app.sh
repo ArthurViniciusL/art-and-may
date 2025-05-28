@@ -13,7 +13,6 @@ DIRS=(
   "$ROOT_DIR/core/utils"
   "$ROOT_DIR/core/services"
   "$ROOT_DIR/models"
-  "$ROOT_DIR/viewmodels"
   "$ROOT_DIR/app/Home"
   "$ROOT_DIR/styles"
   "$ROOT_DIR/components/ui"
