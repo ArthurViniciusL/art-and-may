@@ -4,6 +4,9 @@ import art01 from '../../assets/memories/01/file_00000000fbd8622fb0efefa1282e4c1
 import img02 from '../../assets/memories/02/20250419_161752.jpg';
 import art02 from '../../assets/memories/02/file_000000004090622f9f6947ee69441d46.png';
 
+import img03 from '../../assets/memories/03/IMG-20250425-WA0000.jpg';
+import art03 from '../../assets/memories/03/file_000000003650622fbf3e8e5f86b1c8b3.png';
+
 export interface IMemories {
     id:number
     date: string,
@@ -29,5 +32,13 @@ export const Memories: IMemories[] = [
         "coloringArt": art02,
         "poem": "",
         "music": ""
-    }
+    },
+    {
+        "id": 3,
+        "date": "03-05-2025",
+        "picture": img03,
+        "coloringArt": art03,
+        "poem": "",
+        "music": ""
+    },
 ]

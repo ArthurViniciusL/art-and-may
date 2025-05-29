@@ -1,3 +1,5 @@
+src/assets/memories
+
 # Logs
 logs
 *.log
@@ -22,5 +24,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-src/assets/memories

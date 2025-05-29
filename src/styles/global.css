@@ -39,3 +39,19 @@ main {
 li {
     list-style: none;
 }
+
+.art\:box-shadown {
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.15);
+}
+
+.art\:top\:0 {
+    top: 0;
+}
+
+.art\:bottom\:0 {
+    bottom: 0;
+}
+
+.art\:right\:0 {
+    right: 0;
+}

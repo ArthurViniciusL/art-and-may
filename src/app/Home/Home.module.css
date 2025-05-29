@@ -3,7 +3,21 @@
 }
 
 .content {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--base);
-    flex-wrap: wrap;
+    row-gap: var(--base);
+}
+
+@media (max-width: 1030px) {
+    .content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
 }
