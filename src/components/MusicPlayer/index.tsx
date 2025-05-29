@@ -1,5 +1,9 @@
 export default function MusicPlayer () {
     return (
-        <>Olá</>
+        <>
+        <div className="art:ease:quick">
+            MusicPlayer
+        </div>
+        </>
     )
 }
