@@ -1,44 +1,84 @@
 import img01 from '../../assets/memories/01/IMG-20250417-WA0062.jpg';
-import art01 from '../../assets/memories/01/file_00000000fbd8622fb0efefa1282e4c12.png';
+import art01 from '../../assets/memories/01/art_001.png';
 
 import img02 from '../../assets/memories/02/20250419_161752.jpg';
-import art02 from '../../assets/memories/02/file_000000004090622f9f6947ee69441d46.png';
+import art02 from '../../assets/memories/02/art_002.png';
 
-import img03 from '../../assets/memories/03/IMG-20250425-WA0000.jpg';
-import art03 from '../../assets/memories/03/file_000000003650622fbf3e8e5f86b1c8b3.png';
+import img03 from '../../assets/memories/03/IMG-20250425-WA0003.jpg'
+import art03 from '../../assets/memories/03/art_003.png';
+
+import img04 from '../../assets/memories/04/IMG-20250425-WA0000.jpg';
+import art04 from '../../assets/memories/04/art_004.png';
+
+import img05 from '../../assets/memories/05/20250526_014733.jpg';
+import art05 from '../../assets/memories/05/art_005.png';
 
 export interface IMemories {
-    id:number
-    date: string,
-    picture: string,
-    coloringArt: string,
-    poem: string,
-    music: string
+    id: number;
+    date: string;
+    banner: {
+        picture: string;
+        poem: string;
+        coloringArt: string;
+        pdf: string;
+    };
+    music: string;
 }
 
 export const Memories: IMemories[] = [
     {
-        "id": 1,
-        "date": "29-03-2025",
-        "picture": img01,
-        "coloringArt": art01,
-        "poem": "",
-        "music": ""
+        id: 1,
+        date: "29-03-2025",
+        banner: {
+            picture: img01,
+            poem: "De repente era você</br> <br>Sem hora marcada</br> <br>Uma paixão inesperada</br> <br>De repente era você</br>",
+            coloringArt: art01,
+            pdf: '/public/arts/art_001.pdf'
+        },
+        music: ""
     },
     {
         "id": 2,
         "date": "19-04-2025",
-        "picture": img02,
-        "coloringArt": art02,
-        "poem": "",
+        banner: {
+            picture: img02,
+            poem: "",
+            coloringArt: art02,
+            pdf: '/public/arts/art_002.pdf'
+        },
         "music": ""
     },
     {
         "id": 3,
         "date": "03-05-2025",
-        "picture": img03,
-        "coloringArt": art03,
-        "poem": "",
+        banner: {
+            picture: img03,
+            poem: "",
+            coloringArt: art03,
+            pdf: '/public/arts/art_003.pdf'
+        },
+        "music": ""
+    },
+    {
+        "id": 4,
+        "date": "",
+        banner: {
+            picture: img04,
+            poem: "",
+            coloringArt: art04,
+            pdf: '/public/arts/art_004.pdf'
+        },
+        "music": ""
+    },
+    {
+        "id": 5,
+        "date": "",
+        banner: {
+            picture: img05,
+            poem: "",
+            coloringArt: art05,
+            pdf: '/public/arts/art_005.pdf'
+        },
         "music": ""
     },
 ]

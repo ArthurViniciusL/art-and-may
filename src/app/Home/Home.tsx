@@ -1,50 +1,75 @@
 import css from "./Home.module.css";
 
-import {type IMemories, Memories} from "../../core/api/Memories.ts";
+import { type IMemories, Memories } from "../../core/api/Memories.ts";
 import CardBox from "../../components/app/Home/CardBox";
 import Button from "../../components/ui/Button";
 import MusicPlayer from "../../components/MusicPlayer";
 import Banner from "../../components/Banner";
-import {IconArt, IconMusic, IconPoems} from "../../core/modules/app.modules.ts";
-import {useState} from "react";
-import {BannerType} from "../../types/BannerType.ts";
+import { IconArt, IconMusic, IconPoems } from "../../core/modules/app.modules.ts";
+import { useState } from "react";
+import { BannerType } from "../../types/BannerType.ts";
 
 
 function Home() {
 
-    // TODO Criar um Array com todos os ids selecionados e verificar se ele existe na coelção para exibir um determinado item, sem anular o anterior.
-
-    // const [selectedId, setSelectedId] = useState<number>(0);
-    const [currentContent, setCurrentContent] = useState(BannerType.PICTURE);
-    const [musicIsSlect, setMusicIsSlect] = useState<boolean>(false);
-
-    const [test, setTest] = useState<number[]>([]);
-
     const data: IMemories[] = Memories;
 
-    //console.log(data);
+    const [musicId, setMusicId] = useState<number[]>([]);
+    const [poemId, setPoemId] = useState<number[]>([]);
+    const [artId, setArtId] = useState<number[]>([]);
+
+    const [bannerContent, setBannerContent] = useState(BannerType.PICTURE);
+
+    function addId(id: number, array: number[]) {
+        return [...array, id];
+    }
+
+    function removeId(id: number, array: number[]) {
+        return array.filter(item => item !== id);
+    }
+
+    function handleIdBanner(id: number, contentType: number) {
+        switch (contentType) {
+            case BannerType.POEM:
+                setPoemId(
+                    prev =>
+                        prev.includes(id) ?
+                            removeId(id, prev)
+                            :
+                            addId(id, prev)
+                );
+                setArtId(prev => removeId(id, prev));
+                break;
+
+            case BannerType.COLORING_ART:
+                setArtId(
+                    prev =>
+                        prev.includes(id) ?
+                            removeId(id, prev)
+                            :
+                            addId(id, prev)
+                );
+                setPoemId(prev => removeId(id, prev));
+                break;
+            default:
+                throw new Error(`Invalid content type: ${contentType}`);
+        }
+        setBannerContent(contentType);
+    };
 
     function handleMusic(id: number) {
+        setMusicId(
+            prev =>
+                prev.includes(id) ?
+                    removeId(id, prev)
+                    :
+                    addId(id, prev)
+        );
+    }
 
-        if (test.includes(id)) {
-            // remove selected id
-            setTest(prev => prev.filter(value => value !== id));
-        }
-
-        if (!test.includes(id)) {
-            // add selected id
-            setTest(prev => {
-                // setSelectedId(id);
-                const array = [...prev, id];
-                //console.log(array);
-                return array;
-            });
-        }
-
-        setMusicIsSlect(true);
-
-        //console.log(selectedId);
-        //console.log(test)
+    function toogleClose(id: number) {
+        setPoemId(prev => removeId(id, prev));
+        setArtId(prev => removeId(id, prev));
     }
 
     function treatDate(date: string) {
@@ -56,11 +81,20 @@ function Home() {
             <main className="art:flex art:x-content:center">
                 <ul className={css.content}>
                     {
-                        data.map((memorie: IMemories) => {
+                        data.map((memorie: IMemories, index) => {
                             return (
-                                <CardBox key={memorie.id}>
-                                    <Banner selected={currentContent} picture={memorie.picture}
-                                            coloringArt={memorie.coloringArt}/>
+                                <CardBox key={index}>
+                                    {
+                                        bannerContent === BannerType.COLORING_ART && artId.includes(memorie.id) ?
+                                            <Banner content={memorie.banner.coloringArt} contentType={BannerType.COLORING_ART} closeContent={() => { toogleClose(memorie.id) }} pdfUrl={memorie.banner.pdf} />
+                                            :
+                                            (
+                                                bannerContent === BannerType.POEM && poemId.includes(memorie.id) ?
+                                                    <Banner content={memorie.banner.poem} contentType={BannerType.POEM} closeContent={() => { toogleClose(memorie.id) }} />
+                                                    :
+                                                    <Banner content={memorie.banner.picture} contentType={BannerType.PICTURE} closeContent={() => { toogleClose(memorie.id) }} />
+                                            )
+                                    }
                                     <div className="art:w:full art:flex art:gap:base art:row art:x-content:between">
                                         <h3 className="art:font:black-02 art:font:bold">Interagir:</h3>
                                         <p className="cedarville-cursive-regular">
@@ -68,24 +102,29 @@ function Home() {
                                         </p>
                                     </div>
                                     <div className="art:w:full art:flex art:gap:base art:x-center ">
-                                        <Button onClick={() => {
-                                            handleMusic(memorie.id)
-                                        }}>
-                                            <IconMusic/>
+                                        <Button
+                                            isSelected={musicId.includes(memorie.id)}
+                                            onClick={() => { handleMusic(memorie.id) }}
+                                        >
+                                            <IconMusic />
                                         </Button>
 
-                                        <Button>
-                                            <IconPoems/>
+                                        <Button
+                                            isSelected={poemId.includes(memorie.id)}
+                                            onClick={() => { handleIdBanner(memorie.id, BannerType.POEM) }}
+                                        >
+                                            <IconPoems />
                                         </Button>
 
-                                        <Button onClick={() => {
-                                            setCurrentContent(BannerType.COLORING_ART)
-                                        }}>
-                                            <IconArt/>
+                                        <Button
+                                            isSelected={artId.includes(memorie.id)}
+                                            onClick={() => { handleIdBanner(memorie.id, BannerType.COLORING_ART) }}
+                                        >
+                                            <IconArt />
                                         </Button>
                                     </div>
-                                    { musicIsSlect && test.includes(memorie.id) ?
-                                        (<MusicPlayer/>) : (<></>)
+                                    {musicId.includes(memorie.id) ?
+                                        (<MusicPlayer />) : (<></>)
                                     }
                                 </CardBox>
                             );
