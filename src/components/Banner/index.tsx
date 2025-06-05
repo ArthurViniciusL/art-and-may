@@ -6,13 +6,6 @@ import Poem from "../Poem/index.tsx";
 
 interface BannerProps {
     content: string | string[];
-    /*
-    content: {
-        picture: string;
-        coloringArt: string;
-        poem: string;
-    }; // IMemories["banner"][]
-    */
     contentType: number;
     closeContent: () => void;
     pdfUrl?: string;
@@ -35,9 +28,9 @@ export default function Banner({ content, contentType, closeContent, pdfUrl }: B
 
                 {
                     contentType === BannerType.POEM ?
-                        <Poem text={content}/>
+                        <Poem text={Array.from(content)}/>
                         :
-                        <Img src={content} />
+                        <Img src={content.toString()} />
                 }
 
 
