@@ -18,7 +18,7 @@ export interface IMemories {
     date: string;
     banner: {
         picture: string;
-        poem: string;
+        poem: string[];
         coloringArt: string;
         pdf: string;
     };
@@ -31,7 +31,7 @@ export const Memories: IMemories[] = [
         date: "29-03-2025",
         banner: {
             picture: img01,
-            poem: "De repente era você</br> <br>Sem hora marcada</br> <br>Uma paixão inesperada</br> <br>De repente era você</br>",
+            poem: ["De repente era você", "Sem hora marcada", "Uma paixão inesperada", "De repente era você"],
             coloringArt: art01,
             pdf: '/public/arts/art_001.pdf'
         },
@@ -42,7 +42,7 @@ export const Memories: IMemories[] = [
         "date": "19-04-2025",
         banner: {
             picture: img02,
-            poem: "",
+            poem: ["Teu olhar carrega a sinceridade das verdades não ditas", "No fundo dos teus olhos eu posso ler as palavras que a sua boca não expressa", "Palavras de dúvida, de admiração, de excitação e paixão", "Foi na verdade de seus olhos que me despi dos meus medos e me cobri com paixão"],
             coloringArt: art02,
             pdf: '/public/arts/art_002.pdf'
         },
@@ -53,7 +53,7 @@ export const Memories: IMemories[] = [
         "date": "03-05-2025",
         banner: {
             picture: img03,
-            poem: "",
+            poem: [],
             coloringArt: art03,
             pdf: '/public/arts/art_003.pdf'
         },
@@ -64,7 +64,7 @@ export const Memories: IMemories[] = [
         "date": "",
         banner: {
             picture: img04,
-            poem: "",
+            poem: [],
             coloringArt: art04,
             pdf: '/public/arts/art_004.pdf'
         },
@@ -75,7 +75,7 @@ export const Memories: IMemories[] = [
         "date": "",
         banner: {
             picture: img05,
-            poem: "",
+            poem: [],
             coloringArt: art05,
             pdf: '/public/arts/art_005.pdf'
         },

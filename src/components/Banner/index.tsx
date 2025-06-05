@@ -5,7 +5,7 @@ import { BannerType } from "../../types/BannerType.ts";
 import Poem from "../Poem/index.tsx";
 
 interface BannerProps {
-    content: string;
+    content: string | string[];
     /*
     content: {
         picture: string;
@@ -19,8 +19,6 @@ interface BannerProps {
 }
 
 export default function Banner({ content, contentType, closeContent, pdfUrl }: BannerProps) {
-
-    // TODO Ele está filtrando o card selecionado, mas por algum motivo todos que não suprem a condição ficam vazios
 
     return (
         <>
