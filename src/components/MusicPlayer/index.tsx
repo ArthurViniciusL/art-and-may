@@ -15,17 +15,17 @@ export default function MusicPlayer({ src, title, artist, cover }: MusicPlayerPr
 
     const audioRef = useRef<HTMLAudioElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [volume, setVolume] = useState(0.1); // 10% de volume inicial
 
     /*
     * const [currentTime, setCurrentTime] = useState(0);
     * const [duration, setDuration] = useState(0);
-    * const [volume, setVolume] = useState(0.6); // 60% de volume inicial
     * const [isMuted, setIsMuted] = useState(false);
     */
 
     useEffect(() => {
         if (audioRef.current) {
-            audioRef.current.volume = 0.6;
+            audioRef.current.volume = volume;
         }
     }, []);
 
@@ -38,7 +38,11 @@ export default function MusicPlayer({ src, title, artist, cover }: MusicPlayerPr
             }
             setIsPlaying(!isPlaying);
         }
-    };
+    }
+
+    function treatText(text: string) {
+        return text.length > 24 ? text.slice(0, 20) + '...' : text;
+    }
 
     return (
         <>
@@ -48,11 +52,11 @@ export default function MusicPlayer({ src, title, artist, cover }: MusicPlayerPr
 
                 <div className="art:w:full art:flex art:col art:gap:sm">
                     <h3 className="art:font:base art:font:capitalize art:font:bold">
-                        {title.length > 24 ? title.slice(10) + '...' : title}
+                        {treatText(title)}
                     </h3>
 
                     <p className="art:font:base art:font:capitalize art:font:black-04">
-                        {artist.length > 24 ? artist.slice(10) + '...' : artist}
+                        {treatText(artist)}
                     </p>
                 </div>
 
