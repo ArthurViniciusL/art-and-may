@@ -54,7 +54,7 @@ function Home() {
             default:
                 throw new Error(`Invalid content type: ${contentType}`);
         }
-        setBannerContent(contentType);
+        //setBannerContent(contentType);
     };
 
 
@@ -103,14 +103,14 @@ function Home() {
                                         </p>
                                     </div>
                                     <div className="art:w:full art:flex art:gap:base art:x-center ">
-                                        {/* 
+
                                         <Button
                                             isSelected={musicId.includes(memorie.id)}
                                             onClick={() => { handleMusic(memorie.id) }}
                                         >
                                             <IconMusic />
                                         </Button>
-                                         */}
+
 
                                         <Button
                                             isSelected={poemId.includes(memorie.id)}
@@ -126,20 +126,16 @@ function Home() {
                                             <IconArt />
                                         </Button>
                                     </div>
-                                    {/*musicId.includes(memorie.id) ?
-                                            (
-                                                <MusicPlayer src={memorie.music.src}
-                                                    title={memorie.music.title}
-                                                    artist={memorie.music.artist}
-                                                    cover={memorie.music.cover} />
-                                            )
-                                            :
-                                            (<></>)
-                                    */}
-                                    <MusicPlayer src={memorie.music.src}
-                                        title={memorie.music.title}
-                                        artist={memorie.music.artist}
-                                        cover={memorie.music.cover} />
+                                    {musicId.includes(memorie.id) ?
+                                        (
+                                            <MusicPlayer src={memorie.music.src}
+                                                title={memorie.music.title}
+                                                artist={memorie.music.artist}
+                                                cover={memorie.music.cover} />
+                                        )
+                                        :
+                                        (<></>)
+                                    }
                                 </CardBox>
                             );
                         })

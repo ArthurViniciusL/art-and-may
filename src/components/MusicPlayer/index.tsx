@@ -15,7 +15,7 @@ export default function MusicPlayer({ src, title, artist, cover }: MusicPlayerPr
 
     const audioRef = useRef<HTMLAudioElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [volume, setVolume] = useState(0.1); // 10% de volume inicial
+    const [volume] = useState(0.1); // 10% de volume inicial
 
     /*
     * const [currentTime, setCurrentTime] = useState(0);
@@ -26,6 +26,7 @@ export default function MusicPlayer({ src, title, artist, cover }: MusicPlayerPr
     useEffect(() => {
         if (audioRef.current) {
             audioRef.current.volume = volume;
+            //setVolume();
         }
     }, []);
 
