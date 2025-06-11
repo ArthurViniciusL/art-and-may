@@ -47,7 +47,7 @@ export default function MusicPlayer({ src, title, artist, cover }: MusicPlayerPr
 
     return (
         <>
-            <div className="art:w:full art:bg:white-02 art:p:base art:border-rd:lg art:flex art:gap:base art:x-content:between">
+            <div className="art:w:full art:bg:white-02 art:p:sm art:border-rd:lg art:flex art:gap:base art:x-content:between">
 
                 <Img className="art:border-rd:base" src={cover} size={4} alt={`capada da música: ${title}`} />
 
