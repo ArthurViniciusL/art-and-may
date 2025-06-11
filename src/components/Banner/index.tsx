@@ -36,7 +36,7 @@ export default function Banner({ content, contentType, closeContent, pdfUrl }: B
 
                 {
                     contentType === BannerType.COLORING_ART ?
-                        <a href={pdfUrl}>
+                        <a href={pdfUrl} target="_blank">
                             <Button className="art:absolute art:bottom:0 art:left:0 art:right:0 art:box-shadown art:m:sm art:bg:black-01 art:font:green-01 art:border:thin art:border:green-01">
                                 <IconDownload strokeWidth={1.5} />
                             </Button>

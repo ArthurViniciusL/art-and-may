@@ -124,7 +124,14 @@ function Home() {
                                         </Button>
                                     </div>
                                     {musicId.includes(memorie.id) ?
-                                        (<MusicPlayer />) : (<></>)
+                                        (
+                                            <MusicPlayer src={memorie.music.src}
+                                                title={memorie.music.title}
+                                                artist={memorie.music.artist}
+                                                cover={memorie.music.cover} />
+                                        )
+                                        :
+                                        (<></>)
                                     }
                                 </CardBox>
                             );
