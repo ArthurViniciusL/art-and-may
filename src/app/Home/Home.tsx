@@ -105,6 +105,7 @@ function Home() {
                                     <div className="art:w:full art:flex art:gap:base art:x-center ">
 
                                         <Button
+                                            className="art:bg:white-02 art:font:purple-02"
                                             isSelected={musicId.includes(memorie.id)}
                                             onClick={() => { handleMusic(memorie.id) }}
                                         >
@@ -113,6 +114,7 @@ function Home() {
 
 
                                         <Button
+                                            className="art:bg:white-02 art:font:red-02 "
                                             isSelected={poemId.includes(memorie.id)}
                                             onClick={() => { handleIdBanner(memorie.id, BannerType.POEM) }}
                                         >
@@ -120,6 +122,7 @@ function Home() {
                                         </Button>
 
                                         <Button
+                                        className="art:bg:white-02 art:font:orange-02"
                                             isSelected={artId.includes(memorie.id)}
                                             onClick={() => { handleIdBanner(memorie.id, BannerType.COLORING_ART) }}
                                         >

@@ -8,7 +8,7 @@ export default function Poem({ text }: PoemProps) {
 
     const art = {
         box: "art:flex art:w:full art:col",
-        poem: "art:overflow:auto art:scrollbar:none art:p:lg art:font:black-02 art:flex art:gap:sm art:col art:x-content:center art:y-items:center "
+        poem: "art:overflow:auto art:scrollbar:none art:p:lg art:font:!black-02 art:flex art:gap:sm art:col art:x-content:center art:y-items:center "
     }
 
     return (

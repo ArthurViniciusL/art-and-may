@@ -10,7 +10,7 @@ export default function Footer() {
                 </h1>
 
                 <a href="/arts/book.pdf" target="_blank">
-                    <Button className="art:p:base art:border:solid art:border:thin art:border:white-04 art::bg:black-01 art::font:white-01">
+                    <Button className="art:p:base art:border:solid art:font:semibold art:border:thin art:border:white-04 art::bg:yellow:10% art::font:yellow-01">
                         <IconFileDownload size={20} />
                         Baixar folhas para colorir
                     </Button>
