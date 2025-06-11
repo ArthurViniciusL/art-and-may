@@ -72,7 +72,7 @@ export const Memories: IMemories[] = [
         date: "29-03-2025",
         banner: {
             picture: img01,
-            poem: ["De repente era você", "Sem hora marcada", "Uma paixão inesperada", "De repente era você"],
+            poem: ["De repente era você", "Sem hora marcada", "Uma paixão inesperada", "De repente era você.", "18/04/25"],
             coloringArt: art01,
             pdf: '/public/arts/art_001.pdf'
         },
@@ -88,7 +88,7 @@ export const Memories: IMemories[] = [
         "date": "19-04-2025",
         banner: {
             picture: img02,
-            poem: ["Teu olhar carrega a sinceridade das verdades não ditas", "No fundo dos teus olhos eu posso ler as palavras que a sua boca não expressa", "Palavras de dúvida, de admiração, de excitação e paixão", "Foi na verdade de seus olhos que me despi dos meus medos e me cobri com paixão"],
+            poem: ["Teu olhar carrega a sinceridade das verdades não ditas", "No fundo dos teus olhos eu posso ler as palavras que a sua boca não expressa", "Palavras de dúvida, de admiração, de excitação e paixão", "Foi na verdade de seus olhos que me despi dos meus medos e me cobri com paixão.", "12/04/25"],
             coloringArt: art02,
             pdf: '/public/arts/art_002.pdf'
         },
@@ -104,7 +104,16 @@ export const Memories: IMemories[] = [
         "date": "25-04-2025",
         banner: {
             picture: img03,
-            poem: [],
+            poem: [
+                "Pálidas, amarelas e desbotadas eram as luzes das tardes que", "sem ti eu passei",
+                "Por quantas tardes te procurei?",
+                "Meu bem achado",
+                "Por quantas noites com você eu havia sonhado?",
+                "Meu amor inesperado",
+                "Rainha de encantos não explicados",
+                "É por ti que quero ser amado.",
+                "18/04/25"
+            ],
             coloringArt: art03,
             pdf: '/public/arts/art_003.pdf'
         },
@@ -120,7 +129,7 @@ export const Memories: IMemories[] = [
         "date": "25-04-25",
         banner: {
             picture: img04,
-            poem: [],
+            poem: ["Equívoco pensar que apenas do seu perfeito eu quero vivenciar", "04/05"],
             coloringArt: art04,
             pdf: '/public/arts/art_004.pdf'
         },
@@ -136,7 +145,7 @@ export const Memories: IMemories[] = [
         "date": "04-05-25",
         banner: {
             picture: img05,
-            poem: [],
+            poem: ["Não é o exemplo clássico do que entendemos como um buquê, mas flores roubadas parecem expressar bem todo o fervor de sensações que o seu amor me causa", "04/05/25"],
             coloringArt: art05,
             pdf: '/public/arts/art_005.pdf'
         },
@@ -152,7 +161,16 @@ export const Memories: IMemories[] = [
         "date": "04-05-25",
         banner: {
             picture: img06,
-            poem: [],
+            poem: [
+                "Que seja a lua a nossa testemunha",
+                "Sobe a tua sombra nua",
+                "Trêmula e assanhada",
+                "Ao toque de uma pele arranhada",
+                "Entrelaçada na úmida renda azul",
+                "Nos teus cantos suspirados que me dizem \"sim... Venha\"",
+                "Ande amor, eu quero que você me tenha",
+                "Fique em mim, até que enfim, se desague em mim - 01/06"
+            ],
             coloringArt: art06,
             pdf: '/public/arts/art_006.pdf'
         },
@@ -200,7 +218,15 @@ export const Memories: IMemories[] = [
         "date": "10-05-25",
         banner: {
             picture: img09,
-            poem: [],
+            poem: [
+                "E, de repente, o que era trivial parou de ser banal.",
+                "Afinal, o céu se tornou mais belo, com a vida agora imersa em novos tons de amarelo.",
+                "Porque, com teu sorriso, tudo ganha um novo sentido",
+                "Em um universo mais colorido, abrigando o caminho para um amor a ser vivido.",
+                "Por isso, meu amor, eu digo:",
+                "Te amarei em todos os dias que venham a ser vividos.",
+                "21/04/25"
+            ],
             coloringArt: art09,
             pdf: '/public/arts/art_009.pdf'
         },
@@ -216,7 +242,15 @@ export const Memories: IMemories[] = [
         "date": "10-05-25",
         banner: {
             picture: img10,
-            poem: [],
+            poem: [
+                "Indelicada é a saudade que a tua distância me desperta, você é o que eu quero",
+                "Quero me segar no brilho do teus olhos",
+                "Andar perdido pelo teu corpo",
+                "Ler os teus segredos, agora misturados aos meus",
+                "E sem medo ou angústia sentir teus lábios trêmulos",
+                "Sendo cúmplice de teus desejos obscenos, no momento em que a nós nos pertencemos.",
+                "06/04/25"
+            ],
             coloringArt: art10,
             pdf: '/public/arts/art_010.pdf'
         },

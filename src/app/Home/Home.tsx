@@ -18,7 +18,7 @@ function Home() {
     const [poemId, setPoemId] = useState<number[]>([]);
     const [artId, setArtId] = useState<number[]>([]);
 
-    const [bannerContent, setBannerContent] = useState(BannerType.PICTURE);
+    // const [bannerContent, setBannerContent] = useState(BannerType.PICTURE);
 
     function addId(id: number, array: number[]) {
         return [...array, id];
@@ -57,6 +57,7 @@ function Home() {
         setBannerContent(contentType);
     };
 
+
     function handleMusic(id: number) {
         setMusicId(
             prev =>
@@ -85,11 +86,11 @@ function Home() {
                             return (
                                 <CardBox key={index}>
                                     {
-                                        bannerContent === BannerType.COLORING_ART && artId.includes(memorie.id) ?
+                                        artId.includes(memorie.id) ?
                                             <Banner content={memorie.banner.coloringArt} contentType={BannerType.COLORING_ART} closeContent={() => { toogleClose(memorie.id) }} pdfUrl={memorie.banner.pdf} />
                                             :
                                             (
-                                                bannerContent === BannerType.POEM && poemId.includes(memorie.id) ?
+                                                poemId.includes(memorie.id) ?
                                                     <Banner content={memorie.banner.poem} contentType={BannerType.POEM} closeContent={() => { toogleClose(memorie.id) }} />
                                                     :
                                                     <Banner content={memorie.banner.picture} contentType={BannerType.PICTURE} closeContent={() => { toogleClose(memorie.id) }} />
@@ -102,12 +103,14 @@ function Home() {
                                         </p>
                                     </div>
                                     <div className="art:w:full art:flex art:gap:base art:x-center ">
+                                        {/* 
                                         <Button
                                             isSelected={musicId.includes(memorie.id)}
                                             onClick={() => { handleMusic(memorie.id) }}
                                         >
                                             <IconMusic />
                                         </Button>
+                                         */}
 
                                         <Button
                                             isSelected={poemId.includes(memorie.id)}
@@ -123,16 +126,20 @@ function Home() {
                                             <IconArt />
                                         </Button>
                                     </div>
-                                    {musicId.includes(memorie.id) ?
-                                        (
-                                            <MusicPlayer src={memorie.music.src}
-                                                title={memorie.music.title}
-                                                artist={memorie.music.artist}
-                                                cover={memorie.music.cover} />
-                                        )
-                                        :
-                                        (<></>)
-                                    }
+                                    {/*musicId.includes(memorie.id) ?
+                                            (
+                                                <MusicPlayer src={memorie.music.src}
+                                                    title={memorie.music.title}
+                                                    artist={memorie.music.artist}
+                                                    cover={memorie.music.cover} />
+                                            )
+                                            :
+                                            (<></>)
+                                    */}
+                                    <MusicPlayer src={memorie.music.src}
+                                        title={memorie.music.title}
+                                        artist={memorie.music.artist}
+                                        cover={memorie.music.cover} />
                                 </CardBox>
                             );
                         })

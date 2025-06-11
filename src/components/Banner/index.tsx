@@ -19,7 +19,7 @@ export default function Banner({ content, contentType, closeContent, pdfUrl }: B
 
                 {
                     contentType === BannerType.POEM || contentType === BannerType.COLORING_ART ?
-                        <Button onClick={closeContent} className="art:absolute art:top:0 art:left:0 art:right:0 art:m:sm art:border:none art:bg:black:10% art::bg:red-02 art::font:!white-01">
+                        <Button onClick={closeContent} className="art:absolute art:top:0 art:right:0 art:m:sm art:border:none art:bg:black:10% art::bg:red-02 art::font:!white-01">
                             <IconClose />
                         </Button>
                         :

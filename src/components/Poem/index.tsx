@@ -8,16 +8,16 @@ export default function Poem({ text }: PoemProps) {
 
     const art = {
         box: "art:flex art:w:full art:col",
-        poem: "art:w:full art:h:full art:p:lg art:font:black-02 art:flex art:gap:sm art:col art:x-content:center art:y-items:center"
+        poem: "art:overflow:auto art:scrollbar:none art:p:lg art:font:black-02 art:flex art:gap:sm art:col art:x-content:center art:y-items:center "
     }
 
     return (
-        <div className={art.box}>
+        <div className={art.box} style={{ "background": "#F6EEE3"}}>
 
-            <article className={art.poem} style={{ "background": "#F6EEE3"}}>
+            <article className={art.poem} style={{height:"90%"}}>
                 {
                     text.map((line) => (
-                        <p>
+                        <p className="art:font:center">
                             {line}
                         </p>
                     ))
