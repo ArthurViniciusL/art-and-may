@@ -15,7 +15,7 @@ export default function Banner({ content, contentType, closeContent, pdfUrl }: B
 
     return (
         <>
-            <div style={{ width: "22rem", height: "25rem" }} className="art:relative art:border:solid art:border:thin art:border:white-02 art:border-rd:base art:ease:quick art:flex art:x-center art:y-center art:overflow:hidden">
+            <div style={{ maxWidth: "22rem", height: "24rem" }} className="art:w:full art:relative art:border:solid art:border:thin art:border:white-02 art:border-rd:base art:ease:quick art:flex art:x-center art:y-center art:overflow:hidden">
 
                 {
                     contentType === BannerType.POEM || contentType === BannerType.COLORING_ART ?
